@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Scheduler 2.0</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+    <link rel= "stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <div class="container" id="head-container">
+    <div class="jumbotron" id="head">
+          <h1>Catch the Train!</h3>
+      </div>
+  </div>
+  <div class="container">
+      <div class="panel panel-default">
+          <div class="panel-heading panel-custom">
+          </div>
+          <table class="table table-hover">
+              <tr>
+                  <th scope="col">Train Name</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">Frequency (min)</th>
+                  <th scope="col">Minutes Away</th>
+                  <th scope="col">Next Arrival</th>
+              </tr>
+              <tbody id="table-data"></tbody>
+          </table>
+          <hr />
+      </div>
+
+      <div class="panel panel-default">
+          <div class="panel-heading panel-custom">
+          </div>
+          <div class="panel-body">
+              <form>
+                  <div class="form-group">
+                      <label for="trainName">Train Name:</label>
+                      <input type="text" class="form-control" placeholder= "Thomas" id="train-name" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="destination">Destination:</label>
+                      <input type="text" class="form-control" placeholder="Salt Lake City" id="train-destination" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="startYear">First Train Time: (Military) <i class="fa fa-clock-o" style="font-size:12px"></i> </label>
+                      <input type="text" class="form-control" placeholder="HH:MM" id="train-time" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="endYear">Frequency (minutes)</label>
+                      <input type="text" class="form-control" id="time-freq">
+                  </div>
+                  <div class="btn-group" role="group">
+                      <button type="button" id="btn-add" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>Schedule</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+
+  </div>
+
+  <script src="logic.js"></script>
+</body>
+
+</html>
